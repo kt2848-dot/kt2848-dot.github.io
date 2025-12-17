@@ -1,0 +1,179 @@
+* { box-sizing: border-box; }
+
+:root {
+  --ink: #0f172a;
+  --muted: #475569;
+  --bg: #ffffff;
+  --panel: #f8fafc;
+  --border: #e2e8f0;
+  --gap: 1.2rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+header.site {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  background: #eef2ff;
+}
+
+nav a[aria-current="page"] {
+  background: #e9d5ff;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.7rem;
+}
+
+.caption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+aside {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0.4rem 0;
+}
+
+.menu a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.menu a:hover {
+  color: var(--ink);
+}
+
+footer.site {
+  border-top: 1px solid var(--border);
+  margin-top: 1.2rem;
+  padding: 1.4rem 1rem 1.8rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.4rem 0.6rem;
+  margin: 0.4rem;
+  background: #fff7ed;
+  border-radius: 0.4rem;
+}
+
+.card form input,
+.card form textarea {
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+}
+
+.card form button {
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.6rem;
+  border: none;
+  background: #7c3aed;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.card form button:hover {
+  background: #6d28d9;
+}
+
+@media (min-width: 48rem) {
+  .wrapper {
+    grid-template-columns: minmax(12rem, 0.28fr) minmax(0, 0.72fr);
+  }
+}
+
+@media (min-width: 69rem) {
+  .wrapper {
+    gap: 1.5rem;
+    padding: 1.6rem;
+  }
+
+  .card {
+    padding: 1.1rem 1.3rem;
+  }
+}

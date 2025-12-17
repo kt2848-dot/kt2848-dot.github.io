@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raster Graphics — Foreground & Background</title>
+
+  <style>
+    :root {
+      --caption-bg: rgba(0,0,0,.55);
+      --caption-fg: #fff;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: url('background.jpg') center/cover no-repeat fixed;
+      font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+      color: #111;
+    }
+    .stage {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .portrait {
+      position: absolute;
+      bottom: 2vh;
+      right: 4vw;
+      width: min(30vw, 420px);
+      height: auto;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,.35));
+    }
+    .caption {
+      position: absolute;
+      left: 4vw;
+      bottom: 4vh;
+      max-width: 36ch;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: var(--caption-bg);
+      color: var(--caption-fg);
+      line-height: 1.45;
+    }
+    .caption h1 {
+      margin: 0 0 6px 0;
+      font-size: clamp(20px, 3vw, 28px);
+      letter-spacing: .2px;
+    }
+    .caption p { margin: 0; font-size: clamp(14px, 2.2vw, 16px); }
+    .sr-only { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+  </style>
+</head>
+<body>
+  <main class="stage" role="main">
+    <img
+      class="portrait"
+      src="me-480.png"
+      srcset="me-480.png 480w, me-960.png 960w, me-1440.png 1440w"
+      sizes="(max-width: 700px) 45vw, 420px"
+      alt="Cutout portrait of Kaiming Tan"
+      width="480"
+      height="640"
+    />
+
+    <!-- Descriptive caption / title -->
+    <section class="caption" aria-label="Description">
+      <h1>Mount Fuji</h1>
+      <p>I visited Mount Fuji this summer and took this background photo but I forgot to took a photo with the mountain, that was the reason why I chose this pic. I found I should use a bigger foreground image after finishing the work.</p>
+    </section>
+  </main>
+</body>
+</html>
